@@ -6,10 +6,10 @@ public class ShoppingCart {
     public ShoppingCart(){
         productList = new ArrayList<>();
     }
-    private void addProduct(Product product){
+    public void addProduct(Product product){
         productList.add(product);
     }
-    private Product findProduct(String productName){
+    public Product findProduct(String productName){
         Product foundProduct = null;
         if(!productList.isEmpty()) {
             for(Product p :productList){
@@ -21,7 +21,7 @@ public class ShoppingCart {
         }
         return foundProduct;
     }
-    private boolean removeProduct(String productName){
+    public boolean removeProduct(String productName){
         if(!productList.isEmpty()) {
             Product foundRemoveProduct = findProduct(productName);
             if (foundRemoveProduct != null) {
@@ -33,10 +33,20 @@ public class ShoppingCart {
         else
             return false;
     }
-    private void showProduct(){
+    public double totalprice(){
+        double sum=0;
+        for(Product p :productList)
+            sum += p.getPrice();
+        return sum;
+    }
+    public void showProduct(){
         if(!productList.isEmpty()){
+            System.out.println("The total price is "+totalprice());
             for(Product p :productList)
                 System.out.println(p);
+        }
+        else{
+            System.out.println("No product in the Shopping Cart");
         }
     }
 }
