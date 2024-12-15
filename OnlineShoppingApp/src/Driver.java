@@ -9,7 +9,7 @@ public class Driver {
         new Driver();
     }
     public Driver(){
-
+        Menu menu = new Menu();
     }
 
     public void clearScreen() {

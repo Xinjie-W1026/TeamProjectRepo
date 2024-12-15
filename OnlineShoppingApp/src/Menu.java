@@ -6,7 +6,7 @@ import java.util.Scanner;
     public static final String ANSI_BLUE = "\u001B[34m";
 
     public Menu() {
-
+        ShoppingMenu();
     }
 
     public void mainMenu() {
@@ -32,9 +32,8 @@ import java.util.Scanner;
                         System.out.println(ANSI_YELLOW + "Confirm to add the product to your ShoppingCart(1:yes;2:no)" + ANSI_RESET);
                         int isAdd = sc.nextInt();
                         if (isAdd == 1) {
-                            System.out.println(ANSI_BLUE + "Amount of the added:" + ANSI_RESET);
-                            int number;
-                            number = sc.nextInt();
+                            System.out.print(ANSI_BLUE + "Amount of the added:" + ANSI_RESET);
+                            int number = sc.nextInt();
                             userCart.addProduct(mall.findProduct(id), number);
                         }
                         else if (isAdd == 2) {

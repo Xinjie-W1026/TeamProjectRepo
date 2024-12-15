@@ -5,6 +5,7 @@ public class Mall{
 
         public Mall() {
             products = new ArrayList<>();
+            initProducts();
         }
 
         public void initProducts() {

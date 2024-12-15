@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    private List<Products> productList;
+    private final List<Products> productList;
     public ShoppingCart(){
         productList = new ArrayList<>();
     }
     public void addProduct(Product product,int quantity){
-        if(quantity<=0||product == null) return ;
+        if(quantity <= 0|| product == null) return ;
         int foundindex = findProduct(product.getProductName());
         if(foundindex != -1){
             productList.get(foundindex).setQuantity(quantity + productList.get(foundindex).getQuantity());
@@ -56,7 +56,7 @@ public class ShoppingCart {
         }
     }
     private class Products {
-        private Product item;
+        private final Product item;
         private int quantity;
 
         public Products(Product item, int quantity) {
