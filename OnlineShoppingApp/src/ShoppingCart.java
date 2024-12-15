@@ -17,7 +17,7 @@ public class ShoppingCart {
         }
     }
 
-     private int findProduct(String productName){
+    private int findProduct(String productName){
         Products foundProduct = null;
         if(!productList.isEmpty()) {
             for(int i = 0;i < productList.size();i++)
@@ -47,9 +47,9 @@ public class ShoppingCart {
     }
     public void showProduct(){
         if(!productList.isEmpty()){
-            System.out.println("The total price is $"+totalprice());
             for(Products p :productList)
                 System.out.println(p);
+            System.out.println("The total price is $"+totalprice());
         }
         else{
             System.out.println("No product in the Shopping Cart");
