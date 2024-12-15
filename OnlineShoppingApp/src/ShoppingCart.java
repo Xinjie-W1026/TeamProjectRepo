@@ -1,11 +1,7 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class ShoppingCart {
-    private final List<Products> productList;
-    public ShoppingCart(){
-        productList = new ArrayList<>();
-    }
+    private ArrayList<Products> productList = new ArrayList<>();
     public void addProduct(Product product,int quantity){
         if(quantity <= 0|| product == null) return ;
         int foundindex = findProduct(product.getProductName());
@@ -18,7 +14,6 @@ public class ShoppingCart {
     }
 
     private int findProduct(String productName){
-        Products foundProduct = null;
         if(!productList.isEmpty()) {
             for(int i = 0;i < productList.size();i++)
                 if(productList.get(i).getItem().getProductName().equals(productName)) {
@@ -34,12 +29,10 @@ public class ShoppingCart {
                 productList.remove(foundindex);
                 return true;
             }
-            return false;
         }
-        else
-            return false;
+        return false;
     }
-    public double totalprice(){
+    public double totalPrice(){
         double sum = 0;
         for(Products p :productList)
             sum += p.getItem().getPrice()*p.getQuantity();
@@ -49,7 +42,7 @@ public class ShoppingCart {
         if(!productList.isEmpty()){
             for(Products p :productList)
                 System.out.println(p);
-            System.out.println("The total price is $"+totalprice());
+            System.out.println("The total price is $"+totalPrice());
         }
         else{
             System.out.println("No product in the Shopping Cart");
@@ -79,6 +72,9 @@ public class ShoppingCart {
             else{
                 System.out.println("Unable to set quantity, Must be positive");
             }
+        }
+        public String toString() {
+            return item + ", The amount of products: " + quantity;
         }
     }
 }

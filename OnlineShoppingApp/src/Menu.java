@@ -13,11 +13,13 @@ import java.util.Scanner;
 
     }
     public void ShoppingMenu(){
+
+        Mall mall = new Mall();
+        ShoppingCart  userCart = new ShoppingCart();
         Scanner sc = new Scanner(System.in);
+
         while(true)
         {
-            Mall mall = new Mall();
-            ShoppingCart  userCart = new ShoppingCart();
             System.out.println(ANSI_BLUE +"1:enter the Market");
             System.out.println("2:check the ShoppingCart");
             System.out.println("3:exit the System" + ANSI_RESET);
@@ -42,6 +44,7 @@ import java.util.Scanner;
                     }
                     break;
                 }
+
                 case 2: {
                     clearScreen();
                     userCart.showProduct();
