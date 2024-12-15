@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6d77150-2365-45c1-ac9a-1ac496614a8d" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShoppingApp/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShoppingApp/src/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamProjectRepo/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamProjectRepo/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShoppingApp/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShoppingApp/src/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShoppingApp/src/Mall.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShoppingApp/src/Mall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShoppingApp/src/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShoppingApp/src/ShoppingCart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -36,8 +40,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "menu",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Java（processing）/Repository/TeamProjectRepo",
+    "project.structure.last.edited": "工件",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "应用程序.Driver.executor": "Run"
   }
@@ -52,5 +60,16 @@
       <updated>1732095884516</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

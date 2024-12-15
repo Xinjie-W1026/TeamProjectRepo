@@ -47,7 +47,7 @@ public class ShoppingCart {
     }
     public void showProduct(){
         if(!productList.isEmpty()){
-            System.out.println("The total price is "+totalprice());
+            System.out.println("The total price is $"+totalprice());
             for(Products p :productList)
                 System.out.println(p);
         }

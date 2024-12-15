@@ -9,12 +9,12 @@ public class Mall{
         }
 
         public void initProducts() {
-            Product C1 = new Product("Laptop",1 , 1200f);
-            Product C2 = new Product("Milk",2 , 10.50f);
-            Product C3 = new Product("Watermelon",3,10.50f);
-            Product C4 = new Product("Charger",4,8.88f);
-            Product C5 = new Product("Pot",5,55.03f);
-            Product C6 = new Product("Phone",6,600.00f);
+            Product C1 = new Product("Laptop",1 , 1200D);
+            Product C2 = new Product("Milk",2 , 10.50D);
+            Product C3 = new Product("Watermelon",3,10.50D);
+            Product C4 = new Product("Charger",4,8.88D);
+            Product C5 = new Product("Pot",5,55.03D);
+            Product C6 = new Product("Phone",6,600.00D);
             products.add(C1);
             products.add(C2);
             products.add(C3);
@@ -33,4 +33,5 @@ public class Mall{
             }
            return null;
     }
+
 }
