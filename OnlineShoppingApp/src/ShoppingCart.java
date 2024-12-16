@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class ShoppingCart {
     private ArrayList<Products> productList = new ArrayList<>();
-    public void addProduct(Product product,int quantity){
-        if(quantity <= 0|| product == null) return ;
+    public boolean addProduct(Product product,int quantity){
+        if(quantity <= 0|| product == null) return false;
         int foundindex = findProduct(product.getProductName());
         if(foundindex != -1){
             productList.get(foundindex).setQuantity(quantity + productList.get(foundindex).getQuantity());
@@ -11,6 +11,7 @@ public class ShoppingCart {
         else {
             productList.add(new Products(product,quantity));
         }
+        return true;
     }
 
     private int findProduct(String productName){

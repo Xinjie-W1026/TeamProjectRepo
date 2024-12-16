@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.List;
+
 public class Mall{
-        private List<Product> products;
+        private ArrayList<Product> products= new ArrayList<>();
 
         public Mall() {
-            products = new ArrayList<>();
             initProducts();
         }
 
@@ -23,6 +22,28 @@ public class Mall{
             products.add(C6);
         }
 
+        public boolean addProduct(Product product){
+            return products.add(product);
+        }
+
+        public boolean updateProduct(int id ,double newPrice){
+            Product foundProduct = findProduct(id);
+            if(foundProduct != null){
+                foundProduct.setPrice(newPrice);
+                return true;
+            }
+            return false;
+        }
+    public boolean removeProduct(int id){
+        if(!products.isEmpty()) {
+            Product foundProduct = findProduct(id);
+            if (foundProduct != null) {
+                products.remove(foundProduct);
+                return true;
+            }
+        }
+        return false;
+    }
         public void getAllProducts() {
             for(Product p : products){
                 System.out.println(p);
@@ -34,12 +55,12 @@ public class Mall{
                     return p;
             }
            return null;
-    }
-    public Product findProductByName(String name){
-            for(Product p :products){
-                if(p.getProductName().equals(name))
-                    return p;
+        }
+        public void findProductByName(String name){
+            if(name.isEmpty())  return ;
+                for(Product p :products){
+                    if(p.getProductName().toLowerCase().contains(name.toLowerCase()))
+                        System.out.println(p);
             }
-            return null;
-    }
+    }//partial match search
 }
