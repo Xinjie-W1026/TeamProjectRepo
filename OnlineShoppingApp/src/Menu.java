@@ -16,14 +16,24 @@ public class Menu {
     public void mainMenu() {
         System.out.print(ANSI_BLUE +"""
             ----Main Menu
+            0 : Exit System
             1 : Store Menu(For Administrator)
             2 : Shopping Menu(For customer)
             """ + ANSI_RESET);
         int choice = sc.nextInt();
-        switch (choice){
-            case 1 -> StoreMenu();
-            case 2 -> ShoppingMenu();
-            default -> System.out.println(ANSI_RED + "Invalid choice entered: " + choice + ANSI_RESET);
+        while(choice!=0){
+            switch (choice){
+                case 1 -> StoreMenu();
+                case 2 -> ShoppingMenu();
+                default -> System.out.println(ANSI_RED + "Invalid choice entered: " + choice + ANSI_RESET);
+            }
+            System.out.print(ANSI_BLUE +"""
+            ----Main Menu
+            0 : Exit System
+            1 : Store Menu(For Administrator)
+            2 : Shopping Menu(For customer)
+            """ + ANSI_RESET);
+            choice = sc.nextInt();
         }
     }
     public void StoreMenu(){
@@ -120,18 +130,18 @@ public class Menu {
         double price = sc.nextDouble();
         boolean isChanged = mall.updateProduct(id,price);
         if (isChanged){
-            System.out.println("Update Successful..... ");
+            System.out.println(ANSI_BLUE + "Added Successfully" + ANSI_RESET);
         }
         else{
-            System.out.println("Please try it again");
+            System.out.println(ANSI_RED + "Please try it again" + ANSI_RESET);
         }
         stop(1);
     }
     private void removeProductFromStore(){
-        System.out.println(ANSI_BLUE + "Enter product ID to remove the product from Store" + ANSI_RESET);
+        System.out.println(ANSI_BLUE + "Enter product ID to remove the product from Store: " + ANSI_RESET);
         if (sc.hasNextInt()) {
             int id = sc.nextInt();
-            System.out.print(ANSI_YELLOW + "Confirm to remove the product(1:yes;2:no)" + ANSI_RESET);
+            System.out.println(ANSI_YELLOW + "Confirm to remove the product(1:yes;2:no)" + ANSI_RESET);
             int isDelete = sc.nextInt();
             if (isDelete == 1) {
                 if(mall.removeProduct(id))
@@ -147,6 +157,7 @@ public class Menu {
         System.out.print(ANSI_BLUE +"Enter product name(can be partial) to search the product:  " + ANSI_RESET);
         String productName = sc.nextLine();
         mall.findProductByName(productName);
+        stop(2);
     }
     private void listProductsInShoppingCart(){
         clearScreen();
@@ -154,7 +165,7 @@ public class Menu {
         stop(2);
     }
     private void addProductToShoppingCart(){
-        System.out.print(ANSI_BLUE +"Enter product ID to add the product to your ShoppingCart" + ANSI_RESET);
+        System.out.print(ANSI_BLUE +"Enter product ID to add the product to your ShoppingCart: " + ANSI_RESET);
         if (sc.hasNextInt()) {
             int id = sc.nextInt();
             System.out.println(ANSI_YELLOW + "Confirm to add the product to your ShoppingCart(1:yes;2:no)" + ANSI_RESET);
@@ -170,7 +181,7 @@ public class Menu {
         }
     }
     private void removeProductFromShoppingCart(){
-        System.out.println(ANSI_BLUE + "Enter the product ID to remove the product from your ShoppingCart" + ANSI_RESET);
+        System.out.println(ANSI_BLUE + "Enter the product ID to remove the product from your ShoppingCart : " + ANSI_RESET);
         if (sc.hasNextInt()) {
             int id = sc.nextInt();
             System.out.println(ANSI_YELLOW + "Confirm to remove the product(1:yes;2:no)" + ANSI_RESET);

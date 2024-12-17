@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Online Shopping System">
+    <output-path>$PROJECT_DIR$/out/artifacts/Online_Shopping_System</output-path>
+    <root id="archive" name="Online Shopping System.jar" />
+  </artifact>
+</component>
