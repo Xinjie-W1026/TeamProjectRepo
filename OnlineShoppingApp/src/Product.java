@@ -1,4 +1,6 @@
 public class Product {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
     private String productName = "";
     private int id = -1;
     private double price = 0;
@@ -14,7 +16,7 @@ public class Product {
             this.productName = productName;
         }
         else {
-            System.out.println("Unable to set productName, Must not be empty");
+            System.out.println(ANSI_RED + "Unable to set productName, Must not be empty" + ANSI_RESET);
         }
     }
 
@@ -23,7 +25,7 @@ public class Product {
             this.id = id;
         }
         else {
-            System.out.println("Unable to set id, Must be 5-digit integer");
+            System.out.println(ANSI_RED + "Unable to set id, Must be 5-digit integer" + ANSI_RESET);
         }
     }
 
@@ -32,7 +34,7 @@ public class Product {
             this.price = price;
         }
         else{
-            System.out.println("Unable to set price, Must be positive");
+            System.out.println(ANSI_RED + "Unable to set price, Must be positive" + ANSI_RESET);
         }
     }
 

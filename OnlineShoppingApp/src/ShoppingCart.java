@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 public class ShoppingCart {
     private ArrayList<Products> productList = new ArrayList<>();
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_BLUE = "\u001B[34m";
     public boolean addProduct(Product product,int quantity){
         if(quantity <= 0|| product == null) return false;
         int foundindex = findProduct(product.getProductName());
@@ -42,11 +45,11 @@ public class ShoppingCart {
     public void showProduct(){
         if(!productList.isEmpty()){
             for(Products p :productList)
-                System.out.println(p);
-            System.out.println("The total price is $"+totalPrice());
+                System.out.println(ANSI_BLUE + p + ANSI_RESET);
+            System.out.println(ANSI_BLUE + "The total price is $"+totalPrice() + ANSI_RESET);
         }
         else{
-            System.out.println("No product in the Shopping Cart");
+            System.out.println(ANSI_RED + "No product in the Shopping Cart" + ANSI_RESET);
         }
     }
     private class Products {
@@ -71,7 +74,7 @@ public class ShoppingCart {
                 this.quantity = quantity;
             }
             else{
-                System.out.println("Unable to set quantity, Must be positive");
+                System.out.println(ANSI_RED + "Unable to set quantity, Must be positive" + ANSI_RESET);
             }
         }
         public String toString() {

@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public class Mall{
         private ArrayList<Product> products= new ArrayList<>();
-
+        public static final String ANSI_RESET = "\u001B[0m";
+        public static final String ANSI_BLUE = "\u001B[34m";
         public Mall() {
             initProducts();
         }
@@ -23,6 +24,7 @@ public class Mall{
         }
 
         public boolean addProduct(Product product){
+
             return products.add(product);
         }
 

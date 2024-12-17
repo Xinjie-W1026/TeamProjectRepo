@@ -55,7 +55,7 @@ public class Menu {
                 case 3 -> updateProduct();
                 case 4 -> removeProductFromStore();
                 case 5 -> searchProductFromStore();
-                default -> System.out.println("Invalid choice entered: " + choice);
+                default -> System.out.println(ANSI_RED + "Invalid choice entered: " + choice + ANSI_RESET);
             }
             System.out.print(ANSI_BLUE +"""
             ----Store Menu
@@ -88,7 +88,7 @@ public class Menu {
                 case 3 -> addProductToShoppingCart();
                 case 4 -> removeProductFromShoppingCart();
                 case 5 -> listProductsInShoppingCart();
-                default -> System.out.println("Invalid choice entered: " + choice);
+                default -> System.out.println(ANSI_RED + "Invalid choice entered: " + choice + ANSI_RESET);
             }
             System.out.print(ANSI_BLUE +"""
             ----Shopping Menu
@@ -124,13 +124,13 @@ public class Menu {
         stop(1);
     }
     private void updateProduct(){
-        System.out.print("Enter id : ");
+        System.out.print(ANSI_BLUE + "Enter id : " + ANSI_RESET);
         int id = sc.nextInt();
-        System.out.print("Enter New Price : ");
+        System.out.print(ANSI_BLUE + "Enter New Price : " + ANSI_RESET);
         double price = sc.nextDouble();
         boolean isChanged = mall.updateProduct(id,price);
         if (isChanged){
-            System.out.println(ANSI_BLUE + "Added Successfully" + ANSI_RESET);
+            System.out.println(ANSI_BLUE + "Updated Successfully" + ANSI_RESET);
         }
         else{
             System.out.println(ANSI_RED + "Please try it again" + ANSI_RESET);
@@ -174,9 +174,9 @@ public class Menu {
                 System.out.print(ANSI_BLUE + "Amount of the added:" + ANSI_RESET);
                 int number = sc.nextInt();
                 if(userCart.addProduct(mall.findProduct(id), number))
-                    System.out.println("Added Successfully");
+                    System.out.println(ANSI_BLUE +"Added Successfully" + ANSI_RESET);
                 else
-                    System.out.println("Please try it again");
+                    System.out.println(ANSI_RED + "Please try it again" + ANSI_RESET);
             }
         }
     }
