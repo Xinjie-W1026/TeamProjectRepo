@@ -1,13 +1,9 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class ShoppingCart {
-    private List<Products> productList;
-    public ShoppingCart(){
-        productList = new ArrayList<>();
-    }
-    public void addProduct(Product product,int quantity){
-        if(quantity<=0||product == null) return ;
+    private ArrayList<Products> productList = new ArrayList<>();
+    public boolean addProduct(Product product,int quantity){
+        if(quantity <= 0|| product == null) return false;
         int foundindex = findProduct(product.getProductName());
         if(foundindex != -1){
             productList.get(foundindex).setQuantity(quantity + productList.get(foundindex).getQuantity());
@@ -15,10 +11,10 @@ public class ShoppingCart {
         else {
             productList.add(new Products(product,quantity));
         }
+        return true;
     }
 
-     private int findProduct(String productName){
-        Products foundProduct = null;
+    private int findProduct(String productName){
         if(!productList.isEmpty()) {
             for(int i = 0;i < productList.size();i++)
                 if(productList.get(i).getItem().getProductName().equals(productName)) {
@@ -34,12 +30,10 @@ public class ShoppingCart {
                 productList.remove(foundindex);
                 return true;
             }
-            return false;
         }
-        else
-            return false;
+        return false;
     }
-    public double totalprice(){
+    public double totalPrice(){
         double sum = 0;
         for(Products p :productList)
             sum += p.getItem().getPrice()*p.getQuantity();
@@ -47,16 +41,16 @@ public class ShoppingCart {
     }
     public void showProduct(){
         if(!productList.isEmpty()){
-            System.out.println("The total price is "+totalprice());
             for(Products p :productList)
                 System.out.println(p);
+            System.out.println("The total price is $"+totalPrice());
         }
         else{
             System.out.println("No product in the Shopping Cart");
         }
     }
     private class Products {
-        private Product item;
+        private final Product item;
         private int quantity;
 
         public Products(Product item, int quantity) {
@@ -79,6 +73,9 @@ public class ShoppingCart {
             else{
                 System.out.println("Unable to set quantity, Must be positive");
             }
+        }
+        public String toString() {
+            return item + ", The amount of products: " + quantity;
         }
     }
 }
