@@ -17,7 +17,7 @@ public class Driver {
     }
     public void setup(){
         System.out.println(ANSI_BLUE + "///////////////////////////////////////");
-        System.out.println("Online Shopping System V3.0");
+        System.out.println("Online Shopping System V2.0");
         System.out.println("///////////////////////////////////////");
         System.out.println();
         System.out.println();

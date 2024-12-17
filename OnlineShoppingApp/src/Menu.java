@@ -156,7 +156,8 @@ public class Menu {
         sc.nextLine();
         System.out.print(ANSI_BLUE +"Enter product name(can be partial) to search the product:  " + ANSI_RESET);
         String productName = sc.nextLine();
-        mall.findProductByName(productName);
+        if(!mall.findProductByName(productName))
+            System.out.println(ANSI_RED + "Found No Product" + ANSI_RESET);
         stop(2);
     }
     private void listProductsInShoppingCart(){
@@ -179,6 +180,7 @@ public class Menu {
                     System.out.println(ANSI_RED + "Please try it again" + ANSI_RESET);
             }
         }
+        stop(1);
     }
     private void removeProductFromShoppingCart(){
         System.out.println(ANSI_BLUE + "Enter the product ID to remove the product from your ShoppingCart : " + ANSI_RESET);
@@ -192,6 +194,7 @@ public class Menu {
                 else System.out.println(ANSI_RED + "Please enter the correct ID" + ANSI_RESET);
             }
         }
+        stop(1);
     }
     private void clearScreen() {
         System.out.print("\033[H\033[2J");

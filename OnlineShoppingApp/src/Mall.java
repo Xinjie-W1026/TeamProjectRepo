@@ -2,8 +2,6 @@ import java.util.ArrayList;
 
 public class Mall{
         private ArrayList<Product> products= new ArrayList<>();
-        public static final String ANSI_RESET = "\u001B[0m";
-        public static final String ANSI_BLUE = "\u001B[34m";
         public Mall() {
             initProducts();
         }
@@ -24,7 +22,7 @@ public class Mall{
         }
 
         public boolean addProduct(Product product){
-
+            if(findProduct(product.getId()) != null) return false;//ID filter,but same name is OK
             return products.add(product);
         }
 
@@ -46,23 +44,27 @@ public class Mall{
         }
         return false;
     }
-        public void getAllProducts() {
+    public void getAllProducts() {
             for(Product p : products){
                 System.out.println(p);
             }
         }
-        public Product findProduct(int id){
+    public Product findProduct(int id){
             for(Product p : products){
                 if(p.getId() == id)
                     return p;
             }
            return null;
         }
-        public void findProductByName(String name){
-            if(name.isEmpty())  return ;
-                for(Product p :products){
-                    if(p.getProductName().toLowerCase().contains(name.toLowerCase()))
-                        System.out.println(p);
+    public boolean findProductByName(String name){
+        if(name.isEmpty())  return false;
+        boolean isFind = false;
+        for(Product p :products){
+                if(p.getProductName().toLowerCase().contains(name.toLowerCase())){
+                    System.out.println(p);
+                    isFind =true;
+                }
             }
+        return isFind;
     }//partial match search
 }
