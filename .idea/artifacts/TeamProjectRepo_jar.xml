@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TeamProjectRepo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TeamProjectRepo_jar</output-path>
+    <root id="archive" name="TeamProjectRepo.jar">
+      <element id="module-output" name="TeamProjectRepo" />
+    </root>
+  </artifact>
+</component>

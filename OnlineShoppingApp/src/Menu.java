@@ -18,7 +18,7 @@ public class Menu {
             ----Main Menu
             0 : Exit System
             1 : Store Menu(For Administrator)
-            2 : Shopping Menu(For customer)
+            2 : Shopping Menu(For Customer)
             """ + ANSI_RESET);
         int choice = sc.nextInt();
         while(choice!=0){
@@ -31,7 +31,7 @@ public class Menu {
             ----Main Menu
             0 : Exit System
             1 : Store Menu(For Administrator)
-            2 : Shopping Menu(For customer)
+            2 : Shopping Menu(For Customer)
             """ + ANSI_RESET);
             choice = sc.nextInt();
         }
