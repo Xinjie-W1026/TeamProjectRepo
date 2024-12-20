@@ -189,9 +189,12 @@ public class Menu {
             System.out.println(ANSI_YELLOW + "Confirm to remove the product(1:yes;2:no)" + ANSI_RESET);
             int isDelete = sc.nextInt();
             if (isDelete == 1) {
-                if(userCart.removeProduct(mall.findProduct(id).getProductName()))
-                    System.out.println(ANSI_BLUE + "Removed Successfully" + ANSI_RESET);
-                else System.out.println(ANSI_RED + "Please enter the correct ID" + ANSI_RESET);
+                if(mall.findProduct(id) != null){
+                    if(userCart.removeProduct(mall.findProduct(id).getProductName()))
+                        System.out.println(ANSI_BLUE + "Removed Successfully" + ANSI_RESET);
+                }
+                else
+                    System.out.println(ANSI_RED + "Please enter the correct ID" + ANSI_RESET);
             }
         }
         stop(1);

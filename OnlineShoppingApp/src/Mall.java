@@ -22,13 +22,14 @@ public class Mall{
         }
 
         public boolean addProduct(Product product){
+            if(product.getProductName().isEmpty() || product.getPrice() <= 0) return false;
             if(findProduct(product.getId()) != null) return false;//ID filter,but same name is OK
             return products.add(product);
         }
 
         public boolean updateProduct(int id ,double newPrice){
             Product foundProduct = findProduct(id);
-            if(foundProduct != null){
+            if(foundProduct != null && newPrice > 0){
                 foundProduct.setPrice(newPrice);
                 return true;
             }
